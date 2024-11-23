@@ -1,13 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
 body {
   margin: 0 auto;
   text-align: center;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
+  font-family: "Host Grotesk", sans-serif;
   line-height: 1.1;
+  color: rgb(6, 46, 55);
+}
+
+/* addTodoForm */
+label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin-right: 8px;
+}
+
+#todoTitle {
+  width: 20%;
+}
+
+#submitBtn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0.1em;
+  color: rgb(21, 22, 52);
+  background-color: darksalmon;
+  border-radius: 12%;
+  font-size: 1.2rem;
+}
+
+/*Todo List*/
+.todo-list {
+  margin: 1.5em auto;
 }
 
 ul {
-  list-style-position: inside;
+  list-style-type: none;
+  font-family: "Roboto Flex", serif;
+  font-size: 1.2rem;
+  color: rgb(58, 43, 4);
+  padding: 0;
+  margin: 0;
 }
