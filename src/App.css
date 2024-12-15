@@ -15,7 +15,6 @@ h1 {
 
 /* addTodoForm */
 label {
-  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   color: black;
@@ -38,7 +37,12 @@ label {
 
 /*Todo List*/
 .todo-list {
-  margin: 1.5em auto;
+  border: 1px dashed rgb(54, 73, 7);
+  border-radius: 5px;
+  text-align: start;
+  width: 30%;
+  margin: 1em auto;
+  padding-left: 5em;
 }
 
 ul {
@@ -46,6 +50,4 @@ ul {
   font-family: "Roboto Flex", serif;
   font-size: 1.2rem;
   color: rgb(58, 43, 4);
-  padding: 0;
-  margin: 0;
 }
