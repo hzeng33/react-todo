@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+
+.AddButton {
+  background-color: rgba(7, 90, 135, 0.942);
+  color: white;
+  padding: 5.6px;
+  font-size: 1.1rem;
+  font-family: "Arimo", serif;
+  border-radius: 8px;
+  cursor: pointer;
+}
