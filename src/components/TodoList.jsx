@@ -1,5 +1,6 @@
 import TodoListItem from "./TodoListItem";
-import "./App.css";
+import "../App.css";
+import propTypes from "prop-types";
 
 function TodoList({ todoList, onRemoveTodo }) {
   return (
@@ -18,5 +19,10 @@ function TodoList({ todoList, onRemoveTodo }) {
     </div>
   );
 }
+
+TodoList.propTypes = {
+  todoList: propTypes.array,
+  onRemoveTodo: propTypes.func,
+};
 
 export default TodoList;
