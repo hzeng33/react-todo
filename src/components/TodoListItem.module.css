@@ -26,3 +26,17 @@
   background: #a4550f;
   color: #ffffff;
 }
+
+@media screen and (max-width: 340px) {
+  .Container {
+    margin: 2px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .RemoveButton {
+    font-size: small;
+  }
+}

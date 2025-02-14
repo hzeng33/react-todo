@@ -1,5 +1,5 @@
 import style from "./TodoListItem.module.css";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function TodoListItem({ todo, onRemoveTodo }) {
   return (
@@ -17,8 +17,8 @@ function TodoListItem({ todo, onRemoveTodo }) {
 }
 
 TodoListItem.prototypes = {
-  todo: propTypes.object,
-  onRemoveTodo: propTypes.func,
+  todo: PropTypes.object,
+  onRemoveTodo: PropTypes.func,
 };
 
 export default TodoListItem;

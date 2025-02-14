@@ -34,3 +34,20 @@ h1 {
 .sort-field {
   margin-left: 0.3rem;
 }
+
+@media screen and (max-width: 340px) {
+  .sort-order,
+  .sort-field {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sort-order {
+    margin: 2px auto;
+  }
+
+  .sort-field {
+    margin: 2px auto;
+  }
+}

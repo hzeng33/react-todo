@@ -9,3 +9,11 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 340px) {
+  .AddButton {
+    display: flex;
+    flex-direction: row;
+    margin: 2px 5px;
+  }
+}
