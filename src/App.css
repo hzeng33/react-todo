@@ -14,3 +14,23 @@ h1 {
   text-align: center;
 }
 
+.sort-controls {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem;
+}
+
+.sort-order,
+.sort-field {
+  background-color: rgba(7, 90, 135, 0.942);
+  color: white;
+  padding: 5.6px;
+  font-size: 1.1rem;
+  font-family: "Arimo", serif;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sort-field {
+  margin-left: 0.3rem;
+}
