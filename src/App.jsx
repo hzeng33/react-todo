@@ -2,7 +2,7 @@ import "./App.css";
 import TodoList from "./components/TodoList";
 import AddTodoForm from "./components/AddTodoForm";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -29,7 +29,7 @@ function App() {
         throw new Error(`Error: ${response.status}`);
       }
       const data = await response.json();
-      //console.log(data);
+      // console.log(data);
 
       //Sort to-do items in ascending order.
       // data.records.sort((objA, objB) => {
@@ -54,6 +54,8 @@ function App() {
           id: todo.id,
           title: todo.fields.title,
           createdTime: todo.createdTime,
+          completedAt: todo.fields.completedAt || null,
+          isCompleted: todo.fields.completedAt ? false : true,
         };
 
         return newTodo;
@@ -88,6 +90,30 @@ function App() {
     setTodoList(updatedTodoList);
   };
 
+  //toggle todo's complete status.
+  const toggleCompleteTodo = (id) => {
+    setTodoList((prevTodoList) =>
+      prevTodoList.map((todo) => {
+        if (todo.id === id) {
+          if (!todo.isCompleted) {
+            return {
+              ...todo,
+              completedAt: new Date().toISOString(),
+              isCompleted: true,
+            };
+          } else {
+            return {
+              ...todo,
+              completedAt: null,
+              isCompleted: false,
+            };
+          }
+        }
+        return todo;
+      })
+    );
+  };
+
   const sortedTodoList = [...todoList].sort((a, b) => {
     let fieldA = a[sortField];
     let fieldB = b[sortField];
@@ -111,9 +137,24 @@ function App() {
         <Route
           path="/"
           element={
+            <div className="landing-page">
+              <h1>The To-do App</h1>
+              <h3>By Hannah Zeng</h3>
+              <Link to="/todos">
+                <button className="link-btn">Go to To-do List</button>
+              </Link>
+            </div>
+          }
+        />
+        <Route
+          path="/todos"
+          element={
             <>
               <h1>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
+              <Link to="/">
+                <button className="back-btn">Back to Home</button>
+              </Link>
               <div className="sort-controls">
                 <button
                   className="sort-order"
@@ -136,7 +177,11 @@ function App() {
               {isLoading ? (
                 <p id="loading-indicator">Loading...</p>
               ) : (
-                <TodoList todoList={sortedTodoList} onRemoveTodo={removeTodo} />
+                <TodoList
+                  todoList={sortedTodoList}
+                  onRemoveTodo={removeTodo}
+                  onToggleComplete={toggleCompleteTodo}
+                />
               )}
             </>
           }

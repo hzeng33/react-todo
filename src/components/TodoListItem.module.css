@@ -27,6 +27,31 @@
   color: #ffffff;
 }
 
+.RemoveButton {
+  font-size: small;
+}
+
+.incompleteSquare {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.completedSquare {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 340px) {
   .Container {
     margin: 2px auto;
@@ -34,9 +59,5 @@
     flex-direction: column;
     align-items: center;
     font-size: 0.8rem;
-  }
-
-  .RemoveButton {
-    font-size: small;
   }
 }
